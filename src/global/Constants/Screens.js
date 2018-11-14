@@ -3,30 +3,25 @@
 import Images from './Images';
 
 export default {
-  LOGIN_SCREEN: {
+  LOGINSCREEN: {
     screen : 'app.LoginScreen',
     title  : 'Login',
-  },
-  PUSHED_SCREEN: {
-    screen : 'app.PushedScreen',
-    title  : 'Pushed Screen',
   },
   DRAWER: {
     screen : 'app.DrawerScreen',
   },
-
-  FIRST_TAB: {
-    screen       : 'app.FirstTabScreen',
-    title        : 'First Tab',
-    label        : 'First Tab',
-    icon         : Images.TAB_1,
-    selectedIcon : Images.TAB_1_selected,
+  HOMESCREEN: {
+    screen       : 'app.HomeScreen',
+    title        : 'Home',
+    label        : 'Home',
+    icon         : Images.HOME,
+    selectedIcon : Images.HOME_selected,
   },
-  SECOND_TAB: {
-    screen       : 'app.SecondTabScreen',
-    title        : 'Second Tab',
-    label        : 'Second Tab',
-    icon         : Images.TAB_1,
-    selectedIcon : Images.TAB_1_selected,
+  PROFILESCREEN: {
+    screen       : 'app.ProfileScreen',
+    title        : 'Profile',
+    label        : 'Profile',
+    icon         : Images.PROFILE,
+    selectedIcon : Images.PROFILE_selected,
   },
 }

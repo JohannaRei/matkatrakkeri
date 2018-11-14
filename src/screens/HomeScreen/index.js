@@ -12,15 +12,17 @@ import { inject, observer } from 'mobx-react/native';
 import NavButtons  from '../../global/NavButtons';
 import NavBar      from '../../global/NavBar';
 import Constants   from '../../global/Constants';
-import CounterView from '../components/Counter';
 
-@inject('Counter') @observer
-export default class SecondTab extends Component {
+@inject('App', 'Account', 'Location', 'Profile') @observer
+export default class HomeScreen extends Component {
   static navigatorButtons = NavButtons.WithSideMenu;
   static navigatorStyle   = NavBar.Default;
 
   constructor(props: {}) {
     super(props);
+
+    const { App, navigator } = this.props;
+    App.rootNavigator = navigator;
 
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
   }
@@ -35,28 +37,16 @@ export default class SecondTab extends Component {
   }
 
   render() {
-    const { Counter } = this.props;
+    const { Account, Location, Profile } = this.props;
 
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Second Tab Counter
-        </Text>
-
-        <CounterView
-          count={Counter.count}
-          onPlus={() => Counter.onPlus()}
-          onMinus={() => Counter.onMinus()}
-        />
-
+        <Text>Current latitude: {Location.latitude}</Text>
+        <Text>Current longitude: {Location.longitude}</Text>
+        <Text>Location permission granted: {Location.locationPermission}</Text>
         <Button
-          title={`Push new screen`}
-          onPress={() => {
-            this.props.navigator.push({
-              screen: Constants.Screens.PUSHED_SCREEN.screen,
-              title: 'Pushed Screen'
-            });
-          }}
+          title="add 10"
+          onPress={() => Profile.addToDistance(10)}
         />
       </View>
     );
@@ -74,10 +64,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });

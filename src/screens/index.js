@@ -4,17 +4,14 @@ import { Navigation } from 'react-native-navigation';
 
 import Constants from '../global/Constants';
 
-import FirstTab     from './FirstTab';
-import SecondTab    from './SecondTab';
-import Drawer       from './Drawer';
-import PushedScreen from './PushedScreen';
-import LoginScreen  from './LoginScreen';
+import HomeScreen from './HomeScreen';
+import ProfileScreen from './ProfileScreen';
+import Drawer from './Drawer';
+import LoginScreen from './LoginScreen';
 
 export function registerScreens(store: {}, Provider: {}) {
-  Navigation.registerComponent(Constants.Screens.FIRST_TAB.screen,     () => FirstTab, store, Provider);
-  Navigation.registerComponent(Constants.Screens.SECOND_TAB.screen,    () => SecondTab, store, Provider);
-
+  Navigation.registerComponent(Constants.Screens.HOMESCREEN.screen,     () => HomeScreen, store, Provider);
+  Navigation.registerComponent(Constants.Screens.PROFILESCREEN.screen,    () => ProfileScreen, store, Provider);
   Navigation.registerComponent(Constants.Screens.DRAWER.screen,        () => Drawer, store, Provider);
-  Navigation.registerComponent(Constants.Screens.PUSHED_SCREEN.screen, () => PushedScreen, store, Provider);
-  Navigation.registerComponent(Constants.Screens.LOGIN_SCREEN.screen,  () => LoginScreen, store, Provider);
+  Navigation.registerComponent(Constants.Screens.LOGINSCREEN.screen,  () => LoginScreen, store, Provider);
 }

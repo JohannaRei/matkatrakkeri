@@ -5,14 +5,16 @@ import { AsyncStorage } from 'react-native';
 
 import App     from './App';
 import Account from './Account';
-import Counter from './Counter';
+import Location from './Location';
+import Profile from './Profile';
 
 const hydrate = create({ storage: AsyncStorage });
 
 const stores = {
   App,
   Account,
-  Counter,
+  Location,
+  Profile
 }
 
 // you can hydrate stores here with mobx-persist

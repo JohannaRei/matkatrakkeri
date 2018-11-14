@@ -1,5 +1,5 @@
 {
-  "name": "ReactNativeNavigationMobxBoilerplate",
+  "name": "MatkaTrakkeri",
   "version": "0.0.2",
   "private": true,
   "scripts": {
@@ -24,6 +24,6 @@
   "jest": {
     "preset": "react-native"
   },
-  "description": "React Native (RNN+MobX) boilerplate",
-  "author": "Batyr Kanzitdinov <kanzitdinov@gmail.com>"
+  "description": "MatkaTrakkeri",
+  "author": "Johanna Reinikainen"
 }
