@@ -8,6 +8,7 @@ import {
   Button,
 } from 'react-native';
 import { inject, observer } from 'mobx-react/native';
+import Permissions from 'react-native-permissions';
 
 import NavButtons  from '../../global/NavButtons';
 import NavBar      from '../../global/NavBar';
@@ -27,6 +28,45 @@ export default class HomeScreen extends Component {
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
   }
 
+  componentDidMount() {
+    this._checkLocationPermission();
+  }
+
+  _checkLocationPermission = async () => {
+    const { Location } = this.props;
+    await Permissions.check('location')
+      .then((response) => {
+        if (response !== 'authorized') {
+          console.log('permission was granted')
+          this._requestLocationPermission();
+        } else {
+          Location.setLocationPermission(response);
+        }
+      });
+    this.getLocation();
+  }
+
+  _requestLocationPermission = () => {
+    const { Location } = this.props;
+    Permissions.request('location')
+      .then((response) => {
+        Location.setLocationPermission(response);
+      });
+  }
+
+  getLocation = () => {
+    const { Location } = this.props;
+    if (Location.locationPermission === 'authorized') {
+      navigator.geolocation.getCurrentPosition(this.setLocation);
+    }
+  }
+
+  setLocation = (location) => {
+    const { Location } = this.props;
+    const { latitude, longitude } = location.coords;
+    Location.setLocation(latitude, longitude);
+  }
+
   onNavigatorEvent = (event: {}) => {
     if (event.id === 'menu') {
       this.props.navigator.toggleDrawer({
@@ -38,6 +78,7 @@ export default class HomeScreen extends Component {
 
   render() {
     const { Account, Location, Profile } = this.props;
+    console.log(Location.locationPermission)
 
     return (
       <View style={styles.container}>

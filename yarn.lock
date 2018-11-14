@@ -3147,6 +3147,11 @@ react-native-navigation@1.1.134:
   dependencies:
     lodash "4.x.x"
 
+react-native-permissions@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-1.1.1.tgz#4876004681ff8556454613d85249b01baff9b35b"
+  integrity sha512-t0Ujm177bagjUOSzhpmkSz+LqFW04HnY9TeZFavDCmV521fQvFz82aD+POXqWsAdsJVOK3umJYBNNqCjC3g0hQ==
+
 react-native@0.46.1:
   version "0.46.1"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.46.1.tgz#a3f81e6d6c12adac088010ef341f27efa1e66d02"

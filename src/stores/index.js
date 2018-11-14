@@ -19,6 +19,7 @@ const stores = {
 
 // you can hydrate stores here with mobx-persist
 hydrate('Account', stores.Account);
+hydrate('Profile', stores.Profile);
 
 export default {
   ...stores

@@ -1,10 +1,11 @@
 // @flow
 
 import { observable, action } from 'mobx';
+import { persist } from 'mobx-persist';
 
 class Store {
-  @observable fullName = 'Johanna Reinikainen';
-  @observable distanceTracked = 0;
+  @persist @observable fullName = 'Johanna Reinikainen';
+  @persist @observable distanceTracked = 0;
 
   @action setFullName(name: String) {
     this.fullName = name;
