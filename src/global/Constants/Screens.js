@@ -7,9 +7,6 @@ export default {
     screen : 'app.LoginScreen',
     title  : 'Login',
   },
-  DRAWER: {
-    screen : 'app.DrawerScreen',
-  },
   HOMESCREEN: {
     screen       : 'app.HomeScreen',
     title        : 'Home',

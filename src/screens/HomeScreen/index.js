@@ -16,7 +16,6 @@ import Constants   from '../../global/Constants';
 
 @inject('App', 'Account', 'Location', 'Profile') @observer
 export default class HomeScreen extends Component {
-  static navigatorButtons = NavButtons.WithSideMenu;
   static navigatorStyle   = NavBar.Default;
 
   constructor(props: {}) {
@@ -65,15 +64,6 @@ export default class HomeScreen extends Component {
     const { Location } = this.props;
     const { latitude, longitude } = location.coords;
     Location.setLocation(latitude, longitude);
-  }
-
-  onNavigatorEvent = (event: {}) => {
-    if (event.id === 'menu') {
-      this.props.navigator.toggleDrawer({
-        side: 'left',
-        animated: true
-      });
-    }
   }
 
   render() {

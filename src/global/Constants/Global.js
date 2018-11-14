@@ -23,12 +23,6 @@ const startTabBasedApp = () => {
           appStyle: TabBar.Main,
         },
       }),
-    drawer: {
-      left: {
-        screen: Constants.Screens.DRAWER.screen
-      },
-      disableOpenGesture: false
-    },
   });
 }
 

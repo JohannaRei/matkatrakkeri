@@ -1,4 +1,4 @@
-package com.reactnativenavigationmobxboilerplate;
+package com.matkatrakkeri;
 
 // import com.facebook.react.ReactActivity;
 import com.reactnativenavigation.controllers.SplashActivity;

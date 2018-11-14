@@ -9,28 +9,16 @@ import {
 } from 'react-native';
 import { inject, observer } from 'mobx-react/native';
 
-import NavButtons  from '../../global/NavButtons';
-import NavBar      from '../../global/NavBar';
-import Constants   from '../../global/Constants';
+import NavButtons from '../../global/NavButtons';
+import NavBar from '../../global/NavBar';
+import Constants from '../../global/Constants';
 
 @inject('Account', 'Profile') @observer
-export default class SecondTab extends Component {
-  static navigatorButtons = NavButtons.WithSideMenu;
+export default class ProfileScreen extends Component {
   static navigatorStyle   = NavBar.Default;
 
   constructor(props: {}) {
     super(props);
-
-    this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
-  }
-
-  onNavigatorEvent = (event: {}) => {
-    if (event.id === 'menu') {
-      this.props.navigator.toggleDrawer({
-        side: 'left',
-        animated: true
-      });
-    }
   }
 
   render() {

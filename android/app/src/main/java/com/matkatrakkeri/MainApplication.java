@@ -1,4 +1,4 @@
-package com.reactnativenavigationmobxboilerplate;
+package com.matkatrakkeri;
 
 import android.app.Application;
 import android.support.annotation.Nullable;
@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.reactnativenavigation.NavigationApplication;
+import com.airbnb.android.react.maps.MapsPackage;
 
 public class MainApplication extends NavigationApplication {
 
@@ -24,7 +25,9 @@ public class MainApplication extends NavigationApplication {
   @Nullable
   @Override
   public List<ReactPackage> createAdditionalReactPackages() {
-      return null;
+      return Arrays.<ReactPackage>asList(
+        new MapsPackage()
+    );
   }
 
   @Override
